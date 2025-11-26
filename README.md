@@ -69,15 +69,18 @@ Model eğitimi `.ipynb` dosyasında ayrıntılı şekilde gösterilmiştir.
 
 ## 🚀 Uygulamayı Çalıştırma
 
-## 🚀 Uygulamayı Çalıştırma – Komut Tablosu
-
-| Adım | Açıklama | Komut |
-|------|----------|--------|
-| 1️⃣ | Gerekli kütüphaneleri yükle | `pip install flask pandas scikit-learn` |
-| 2️⃣ | Flask sunucusunu başlat | `python app.py` |
-| 3️⃣ | Tarayıcıdan aç | `http://127.0.0.1:5000` |
-
-
+### 1️⃣ Gerekli Kütüphaneler
+```bash
+pip install flask pandas scikit-learn
+```
+### 2️⃣ Uygulamayı Başlat
+```bash
+python app.py
+```
+### 3️⃣ Tarayıcıdan Açın
+```bash
+http://127.0.0.1:5000
+```
 
 🎉 **Uygulama artık hazır!**
 
@@ -86,10 +89,10 @@ Model eğitimi `.ipynb` dosyasında ayrıntılı şekilde gösterilmiştir.
 ## 👨‍💻 Geliştirici Bilgileri
 
 | Bilgi | İçerik |
-|------|---------|
+|-------|--------|
 | **Ad Soyad** | Amir Elahmed |
 | **Ders** | BLG407 – Makine Öğrenmesi |
-| **Proje** | Çoklu Doğrusal Regresyon + Flask Web Uygulaması |
+| **Öğretim Üyesi** | Doç. Dr. Sinan Uğuz |
 
 ---
 
