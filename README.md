@@ -69,17 +69,26 @@ Model eğitimi `.ipynb` dosyasında ayrıntılı şekilde gösterilmiştir.
 
 ## 🚀 Uygulamayı Çalıştırma
 
-### 1️⃣ Gerekli Kütüphaneler
-Aşağıdaki komut ile yüklenir:
+### 1️⃣ Gerekli Kütüphaneler  
+Aşağıdaki komut ile gerekli paketleri yükleyebilirsiniz:
+
 ```bash
 pip install flask pandas scikit-learn
-### 2️⃣ Uygulamayı Başlat
-```bash
+
+2️⃣ Uygulamayı Başlat
+
+Aşağıdaki komut ile Flask sunucusunu başlatın:
+
 python app.py
-### 3️⃣ Tarayıcıdan Açın
-```bash
+
+3️⃣ Tarayıcıdan Açın
+
+Sunucu çalıştıktan sonra bu adresi tarayıcıya yazın:
+
 http://127.0.0.1:5000
-```
+
+
+🎉 Uygulama artık hazır!
 
 👨‍💻 Geliştirici Bilgileri
 Bilgi	İçerik
