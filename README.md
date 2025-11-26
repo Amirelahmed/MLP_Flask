@@ -79,13 +79,18 @@ Model eğitimi `.ipynb` dosyasında ayrıntılı şekilde gösterilmiştir.
 
 
 
-🎉 Uygulama artık hazır!
+🎉 **Uygulama artık hazır!**
 
-👨‍💻 Geliştirici Bilgileri
-Bilgi	İçerik
-Ad Soyad	Amir Elahmed
-Ders	BLG407 – Makine Öğrenmesi
-Proje	Çoklu Doğrusal Regresyon + Flask Web Uygulaması
+---
 
+## 👨‍💻 Geliştirici Bilgileri
+
+| Bilgi | İçerik |
+|------|---------|
+| **Ad Soyad** | Amir Elahmed |
+| **Ders** | BLG407 – Makine Öğrenmesi |
+| **Proje** | Çoklu Doğrusal Regresyon + Flask Web Uygulaması |
+
+---
 
 
