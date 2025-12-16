@@ -79,7 +79,7 @@ python app.py
 ```
 ### 3️⃣ Tarayıcıdan Açın
 ```bash
-http://127.0.0.1:5000
+http://127.0.0.1:5001
 ```
 
 🎉 **Uygulama artık hazır!**
