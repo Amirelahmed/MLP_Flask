@@ -20,7 +20,7 @@ Aşağıdaki tablo proje klasörlerinin ve önemli dosyaların açıklamasını 
 | `templates/` | HTML arayüz dosyaları |
 | `model.pkl` | Eğitimli regresyon modeli |
 | `house_prices_dataset.csv` | Kullanılan veri seti |
-| `BLG407_Coklu_Dogrusal_Regresyon_ve_Flask.ipynb` | Colab eğitim dosyası |
+| `MLP_Flask.ipynb` | Colab eğitim dosyası |
 
 ---
 
