@@ -43,14 +43,14 @@ Projenin temel gücü, kullanılan veri setinin optimizasyonudur. Orijinal 4 tem
 ### 🟦 Giriş Formu (7 Özellik Girişi)
 Kullanıcıdan **7 kritik özellik** (alan, oda, yaş, şehir, kat, eşya, balkon) bilgileri alınır.
 
-![Giriş Ekranı](https://raw.githubusercontent.com/Amirelahmed/MLP_Flask/main/Ekran%20g%C3%B6r%C3%BCnt%C3%BCs%C%202025-11-26%20164446.png)
+![Giriş Ekranı](https://github.com/Amirelahmed/MLP_Flask/blob/e36ea210a0756470d115835d67d20d860fc871d0/images/dene1.png)
 
 ---
 
 ### 🟩 Tahmin Sonucu
 Model tarafından hesaplanan tahmini fiyat kullanıcıya gösterilir.
 
-![Sonuç Ekranı](https://raw.githubusercontent.com/Amirelahmed/MLP_Flask/main/Ekran%20g%C3%B6r%C3%BCnt%C3%BCs%C%202025-11-26%20164458.png)
+![Sonuç Ekranı](https://github.com/Amirelahmed/MLP_Flask/blob/e36ea210a0756470d115835d67d20d860fc871d0/images/dene1sonuc.png)
 
 ---
 
