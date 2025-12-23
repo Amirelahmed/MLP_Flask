@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ev Fiyat Tahmini</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <style>
+        :root {
+            --primary: #00c8ff;
+            --primary-dark: #009dff;
+            --primary-light: rgba(0, 200, 255, 0.1);
+            --secondary: #ff4d8d;
+            --bg-dark: rgba(15, 23, 42, 0.85);
+            --bg-darker: rgba(10, 15, 30, 0.9);
+            --text-light: #ffffff;
+            --text-muted: rgba(255, 255, 255, 0.7);
+            --card-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.6);
+            --border-radius: 16px;
+        }
+
+        body {
+            font-family: 'Tajawal', sans-serif;
+            background: linear-gradient(135deg, #1f2937, #111827);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            color: var(--text-light);
+        }
+
+        .card {
+            background: var(--bg-dark);
+            backdrop-filter: blur(10px);
+            padding: 35px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--card-shadow);
+            width: 100%;
+            max-width: 450px;
+        }
+
+        .title {
+            text-align: center;
+            color: var(--primary);
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 30px;
+            letter-spacing: 1px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .title i {
+            margin-right: 10px;
+            font-size: 32px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: var(--text-light);
+            font-size: 14px;
+        }
+
+        .input-container {
+            position: relative;
+            display: flex;
+            align-items: center;
+            background-color: var(--bg-darker);
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: border-color 0.3s;
+        }
+
+        .input-container i {
+            padding: 12px;
+            color: var(--primary);
+            min-width: 40px;
+            text-align: center;
+        }
+
+        input[type="number"],
+        select {
+            flex-grow: 1;
+            padding: 12px 15px;
+            border: none;
+            background: transparent;
+            color: var(--text-light);
+            outline: none;
+            font-size: 16px;
+            border-radius: 0 10px 10px 0;
+            appearance: none; /* Select arrow control */
+        }
+        
+        select {
+            padding-right: 40px; /* Space for the custom arrow */
+        }
+        
+        .select-arrow {
+            position: absolute;
+            right: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--text-muted);
+            pointer-events: none;
+        }
+
+        input::placeholder {
+            color: var(--text-muted);
+        }
+
+        input:focus,
+        select:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 2px var(--primary-light);
+        }
+        
+        option {
+            background-color: #1f2937;
+            color: var(--text-light);
+        }
+
+        button {
+            width: 100%;
+            padding: 17px;
+            margin-top: 25px;
+            font-size: 18px;
+            border-radius: 12px;
+            border: none;
+            cursor: pointer;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            color: #000;
+            background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+            box-shadow: 0 6px 25px rgba(0,200,255,0.4);
+            transition: all 0.3s;
+        }
+
+        button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0,200,255,0.6);
+        }
+        
+        .info-text {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 13px;
+            color: var(--text-muted);
+        }
+        
+        /* Two-column layout for some fields */
+        .form-row {
+            display: flex;
+            gap: 15px;
+        }
+        .form-row .form-group {
+            flex: 1;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="card">
+        <div class="title">
+            <i class="fa-solid fa-house-chimney"></i>
+            Ev Fiyat Tahmini
+        </div>
+
+        <form action="/predict" method="post">
+            
+            {% if error %}
+            <div style="background-color: #f8d7da; color: #721c24; padding: 10px; border-radius: 5px; margin-bottom: 15px;">
+                {{ error }}
+            </div>
+            {% endif %}
+            
+            <div class="form-group">
+                <label for="area">Alan (m²)</label>
+                <div class="input-container">
+                    <i class="fa-solid fa-ruler-combined"></i>
+                    <input type="number" step="0.01" id="area" name="area" required min="10" placeholder="Örn: 150">
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="rooms">Oda Sayısı</label>
+                    <div class="input-container">
+                        <i class="fa-solid fa-bed"></i>
+                        <input type="number" id="rooms" name="rooms" required min="1" max="10" placeholder="Örn: 3">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="age">Evin Yaşı</label>
+                    <div class="input-container">
+                        <i class="fa-solid fa-calendar"></i>
+                        <input type="number" id="age" name="age" required min="0" placeholder="Örn: 5">
+                    </div>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label for="floor_level">Kat (Düzey)</label>
+                <div class="input-container">
+                    <i class="fa-solid fa-layer-group"></i>
+                    <input type="number" id="floor_level" name="floor_level" required min="1" max="50" placeholder="Örn: 5">
+                </div>
+            </div>
+            
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="is_furnished">Mobilyalı (Eşyalı)</label>
+                    <div class="input-container">
+                        <i class="fa-solid fa-couch"></i>
+                        <select id="is_furnished" name="is_furnished" required>
+                            <option value="1">Evet</option>
+                            <option value="0">Hayır</option>
+                        </select>
+                        <div class="select-arrow"><i class="fa-solid fa-chevron-down"></i></div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="has_balcony">Balkon Var mı?</label>
+                    <div class="input-container">
+                        <i class="fa-solid fa-umbrella-beach"></i>
+                        <select id="has_balcony" name="has_balcony" required>
+                            <option value="1">Evet</option>
+                            <option value="0">Hayır</option>
+                        </select>
+                        <div class="select-arrow"><i class="fa-solid fa-chevron-down"></i></div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="city">Şehir</label>
+                <div class="input-container">
+                    <i class="fa-solid fa-city"></i>
+                    <select id="city" name="city" required>
+                        <option value="">Seçiniz...</option>
+                        {% for city in cities %}
+                        <option value="{{ city }}">{{ city }}</option>
+                        {% endfor %}
+                    </select>
+                    <div class="select-arrow">
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </div>
+                </div>
+            </div>
+
+            <button type="submit">
+                <i class="fa-solid fa-calculator" style="margin-right: 8px;"></i>
+                Fiyatı Hesapla
+            </button>
+
+            <p class="info-text">
+                <i class="fa-solid fa-circle-info" style="margin-right: 5px;"></i>
+                Girdiğiniz 7 kritere göre ev fiyatı tahmini yapılacaktır.
+            </p>
+        </form>
+    </div>
+</body>
+</html>
