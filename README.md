@@ -1,10 +1,10 @@
-# 🏡 BLG407 Çoklu Doğrusal Regresyon (MLR) ve Flask Uygulaması
+# BLG407 Çoklu Doğrusal Regresyon (MLR) ve Flask Uygulaması
 
 Bu proje, **BLG407 Makine Öğrenmesi** dersi kapsamında geliştirilmiş olup, ev fiyatlarını tahmin etmek için optimize edilmiş bir **Çoklu Doğrusal Regresyon (MLR)** modeli kullanır ve bu modeli modern bir **Flask** web arayüzü ile sunar.
 
 ---
 
-## 🎯 Proje Başarısı ve Metodoloji Özeti
+## Proje Başarısı ve Metodoloji Özeti
 
 ### 1. Veri Seti Geliştirme (Mühendislik Katkısı)
 
@@ -26,7 +26,7 @@ Projenin temel gücü, kullanılan veri setinin optimizasyonudur. Orijinal 4 tem
 
 ---
 
-## 📁 Proje Yapısı
+## Proje Yapısı
 
 | Dosya / Klasör | Açıklama |
 | :--- | :--- |
@@ -38,9 +38,9 @@ Projenin temel gücü, kullanılan veri setinin optimizasyonudur. Orijinal 4 tem
 
 ---
 
-## 📸 Uygulama Ekran Görüntüleri
+## Uygulama Ekran Görüntüleri
 
-### 🟦 Giriş Formu (7 Özellik Girişi)
+### Giriş Formu (7 Özellik Girişi)
 Kullanıcıdan **7 kritik özellik** (alan, oda, yaş, şehir, kat, eşya, balkon) bilgileri alınır.
 
 ![Giriş Ekranı](https://github.com/Amirelahmed/MLP_Flask/blob/e36ea210a0756470d115835d67d20d860fc871d0/images/dene1.png)
@@ -54,7 +54,7 @@ Model tarafından hesaplanan tahmini fiyat kullanıcıya gösterilir.
 
 ---
 
-## 🚀 Uygulamayı Çalıştırma
+## Uygulamayı Çalıştırma
 
 ### 1️⃣ Gerekli Kütüphaneler
 ```bash
@@ -69,11 +69,11 @@ python app.py
 [http://127.0.0.1:5001](http://127.0.0.1:5001)
 ```
 
-🎉 **Uygulama artık hazır!**
+**Uygulama artık hazır!**
 
 ---
 
-## 👨‍💻 Geliştirici Bilgileri
+## Geliştirici Bilgileri
 
 | Bilgi | İçerik |
 |-------|--------|
